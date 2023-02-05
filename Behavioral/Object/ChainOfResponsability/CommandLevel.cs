@@ -1,6 +1,6 @@
 namespace ChainOfResponsability
 {
-    public enum LevelCommand
+    public enum CommandLevel
     {
         Captain = 1,
         Lieutenent = 2,

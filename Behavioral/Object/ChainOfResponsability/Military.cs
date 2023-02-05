@@ -2,24 +2,24 @@ namespace ChainOfResponsability
 {
     public class Military
     {
-        public readonly LevelCommand LevelCommand;
+        public readonly CommandLevel CommandLevel;
         public Military? Successor { get; set; }
         public string? Name { get; set; }
 
-        public Military(LevelCommand levelCommand, string name, Military successor)
+        public Military(CommandLevel commandLevel, string name, Military successor)
         {
-            this.LevelCommand = levelCommand;
+            this.CommandLevel = commandLevel;
             this.Successor = successor;
             this.Name = name;
         }
 
-        public bool ExecuteOrder(string order, LevelCommand levelCommand)
+        public bool ExecuteOrder(string order, CommandLevel commandLevel)
         {
-            if (this.LevelCommand != levelCommand)
+            if (this.CommandLevel != commandLevel)
             {
-                return Successor?.ExecuteOrder(order, levelCommand) ?? false;
+                return Successor?.ExecuteOrder(order, commandLevel) ?? false;
             }
-            System.Console.WriteLine($"order: {order} Level Command: {levelCommand}");
+            System.Console.WriteLine($"order: {order} CommandLevel: {commandLevel}");
             return true;
         }
     }
