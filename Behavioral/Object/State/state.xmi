@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="__yrSYLkdEe21V-7oMUu0QQ" name="state">
+  <eAnnotations xmi:id="__yrSYbkdEe21V-7oMUu0QQ" source="Objing">
+    <contents xmi:type="uml:Property" xmi:id="__yrSYrkdEe21V-7oMUu0QQ" name="exporterVersion">
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="__yrSY7kdEe21V-7oMUu0QQ" value="3.0.0"/>
+    </contents>
+  </eAnnotations>
+  <packagedElement xmi:type="uml:Class" xmi:id="__yrSZLkdEe21V-7oMUu0QQ" name="State" isAbstract="true">
+    <ownedAttribute xmi:id="__ysggLkdEe21V-7oMUu0QQ" name="player" visibility="public" type="__ysgjLkdEe21V-7oMUu0QQ" isUnique="false" aggregation="shared" association="__ysgiLkdEe21V-7oMUu0QQ"/>
+    <ownedAttribute xmi:id="__ysggbkdEe21V-7oMUu0QQ" name="Player" visibility="protected" type="__ysgjLkdEe21V-7oMUu0QQ" isUnique="false"/>
+    <ownedOperation xmi:id="__ysggrkdEe21V-7oMUu0QQ" name="SetPlayer" visibility="public">
+      <ownedParameter xmi:id="__ysgg7kdEe21V-7oMUu0QQ" name="player" type="__ysgjLkdEe21V-7oMUu0QQ" isUnique="false">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__ysghLkdEe21V-7oMUu0QQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__ysghbkdEe21V-7oMUu0QQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="__ysghrkdEe21V-7oMUu0QQ" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="__ysgh7kdEe21V-7oMUu0QQ" name="Status" visibility="public" isAbstract="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="__ysgiLkdEe21V-7oMUu0QQ" memberEnd="__ysggLkdEe21V-7oMUu0QQ __ysgibkdEe21V-7oMUu0QQ">
+    <ownedEnd xmi:id="__ysgibkdEe21V-7oMUu0QQ" visibility="public" type="__yrSZLkdEe21V-7oMUu0QQ" isUnique="false" association="__ysgiLkdEe21V-7oMUu0QQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="__ysgirkdEe21V-7oMUu0QQ" name="PlayState">
+    <generalization xmi:id="__ysgi7kdEe21V-7oMUu0QQ" general="__yrSZLkdEe21V-7oMUu0QQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="__ysgjLkdEe21V-7oMUu0QQ" name="Player">
+    <ownedAttribute xmi:id="__ysgjbkdEe21V-7oMUu0QQ" name="state" visibility="public" type="__yrSZLkdEe21V-7oMUu0QQ" isUnique="false" aggregation="shared" association="__ysglbkdEe21V-7oMUu0QQ"/>
+    <ownedAttribute xmi:id="__ysgjrkdEe21V-7oMUu0QQ" name="_state" visibility="private" type="__yrSZLkdEe21V-7oMUu0QQ" isUnique="false"/>
+    <ownedOperation xmi:id="__ysgj7kdEe21V-7oMUu0QQ" name="Status" visibility="public"/>
+    <ownedOperation xmi:id="__ysgkLkdEe21V-7oMUu0QQ" name="TransitionTo" visibility="public">
+      <ownedParameter xmi:id="__ysgkbkdEe21V-7oMUu0QQ" name="state" type="__yrSZLkdEe21V-7oMUu0QQ" isUnique="false">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__ysgkrkdEe21V-7oMUu0QQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__ysgk7kdEe21V-7oMUu0QQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="__ysglLkdEe21V-7oMUu0QQ" value=""/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="__ysglbkdEe21V-7oMUu0QQ" memberEnd="__ysgjbkdEe21V-7oMUu0QQ __ysglrkdEe21V-7oMUu0QQ">
+    <ownedEnd xmi:id="__ysglrkdEe21V-7oMUu0QQ" visibility="public" type="__ysgjLkdEe21V-7oMUu0QQ" isUnique="false" association="__ysglbkdEe21V-7oMUu0QQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="__ysgl7kdEe21V-7oMUu0QQ" name="StopState">
+    <generalization xmi:id="__ysgmLkdEe21V-7oMUu0QQ" general="__yrSZLkdEe21V-7oMUu0QQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="__ysgmbkdEe21V-7oMUu0QQ" name="RecordState">
+    <generalization xmi:id="__ysgmrkdEe21V-7oMUu0QQ" general="__yrSZLkdEe21V-7oMUu0QQ"/>
+  </packagedElement>
+</uml:Model>
