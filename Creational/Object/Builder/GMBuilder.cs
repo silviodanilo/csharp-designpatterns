@@ -2,36 +2,25 @@ namespace Builder
 {
 	public class GMBuilder : CarBuilder
 	{
-		public GMBuilder()
-		{
-			base.ClassName = "GMBuilder".ToString();
-		}
 
-		protected override Engine BuildEngine()
+		public override void BuildEngine()
 		{
-			return new GMEngine();
-		}
+            Car!.Engine = new GMEngine();
+        }
 
-		protected override Wheel BuildWheel()
+		public override void BuildWheel()
 		{
-			return new GMWheel();
+			Car!.Wheels[0] = new GMWheel();
+			Car!.Wheels[1] = new GMWheel();
+			Car!.Wheels[2] = new GMWheel();
+			Car!.Wheels[3] = new GMWheel();
 		}
 
 		public override Car BuildCar()
 		{
-			Car car = new Car();
-			car.NameCarBuilder = ToString();
-			car.Engine = BuildEngine();
-			car.Wheels[0] = BuildWheel();
-			car.Wheels[1] = BuildWheel();
-			car.Wheels[2] = BuildWheel();
-			car.Wheels[3] = BuildWheel();
-			return car;
+			Car!.Name = "GM";
+			return Car!;
 		}
 
-		public override string? ToString()
-		{
-			return base.ClassName;
-		}
 	}
 }

@@ -2,11 +2,11 @@ namespace Builder
 {
 	public abstract class CarBuilder
 	{
-		protected string? ClassName { get; set; }
+		protected Car? Car = new Car();
 
-		protected abstract Engine BuildEngine();
+        public abstract void BuildEngine();
 
-		protected abstract Wheel BuildWheel();
+		public abstract void BuildWheel();
 
 		public abstract Car BuildCar();
 	}

@@ -2,36 +2,25 @@ namespace Builder
 {
 	public class FiatBuilder : CarBuilder
 	{
-		public FiatBuilder()
-		{
-			base.ClassName = "FiatBuilder".ToString();
-		}
 
-		protected override Engine BuildEngine()
+		public override void BuildEngine()
 		{
-			return new FiatEngine();
-		}
+            Car!.Engine = new FiatEngine();
+        }
 
-		protected override Wheel BuildWheel()
+		public override void BuildWheel()
 		{
-			return new FiatWheel();
-		}
+            Car!.Wheels[0] = new FiatWheel();
+			Car!.Wheels[1] = new FiatWheel();
+			Car!.Wheels[2] = new FiatWheel();
+			Car!.Wheels[3] = new FiatWheel();
+        }
 
 		public override Car BuildCar()
 		{
-			Car car = new Car();
-			car.NameCarBuilder = ToString();
-			car.Engine = BuildEngine();
-			car.Wheels[0] = BuildWheel();
-			car.Wheels[1] = BuildWheel();
-			car.Wheels[2] = BuildWheel();
-			car.Wheels[3] = BuildWheel();
-			return car;
+            Car!.Name = "Fiat";
+            return Car!;
 		}
 
-		public override string? ToString()
-		{
-			return base.ClassName;
-		}
 	}
 }

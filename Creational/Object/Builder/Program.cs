@@ -1,8 +1,19 @@
 using Builder;
 
+Director director;
+Car car;
+
 Console.WriteLine("Testing the Builder Design Pattern");
-Car car = MyCarBuilder.BuildCar(new FiatBuilder());
-Console.WriteLine(car.NameCarBuilder);
-Console.WriteLine(car.Engine);
-Console.WriteLine(car.Wheels[0]);
+
+FiatBuilder fiatBuilder = new FiatBuilder();
+director = new(fiatBuilder);
+director.Construct();
+car = fiatBuilder.BuildCar();
+Console.WriteLine(car.Name);
+
+GMBuilder gmBuilder = new GMBuilder();
+director = new(gmBuilder);
+director.Construct();
+car = gmBuilder.BuildCar();
+Console.WriteLine(car.Name);
 

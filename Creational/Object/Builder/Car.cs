@@ -2,10 +2,8 @@ namespace Builder
 {
 	public class Car
 	{
-		public Wheel[] Wheels = new Wheel[4];
-
-		public string? NameCarBuilder { get; set; }
-
+		public string? Name { get; set; }
+        public Wheel[] Wheels = new Wheel[4];
 		public Engine? Engine { get; set; }
 	}
 }
