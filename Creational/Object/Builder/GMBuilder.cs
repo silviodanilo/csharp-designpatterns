@@ -7,6 +7,10 @@ namespace Builder
 		{
             Car!.Engine = new GMEngine();
         }
+		public override void Reset()
+		{
+            this.Car = new Car();
+        }
 
 		public override void BuildWheel()
 		{

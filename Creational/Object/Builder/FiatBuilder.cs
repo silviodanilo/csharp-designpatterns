@@ -8,6 +8,11 @@ namespace Builder
             Car!.Engine = new FiatEngine();
         }
 
+		public override void Reset()
+		{
+            this.Car = new Car();
+        }
+
 		public override void BuildWheel()
 		{
             Car!.Wheels[0] = new FiatWheel();
@@ -18,8 +23,10 @@ namespace Builder
 
 		public override Car BuildCar()
 		{
-            Car!.Name = "Fiat";
-            return Car!;
+			Car!.Name = "Fiat";
+            Car carAux = this.Car;
+            Reset();
+            return carAux;
 		}
 
 	}
